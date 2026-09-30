@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Generate your custom conference ticket for Coding Conf 2025. Join next year's biggest coding conference!">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./assets/css/style.css">
+  
+  <title>Coding Conf - Ticket Generator</title>
+</head>
+<body>
+
+  <!-- fundo / svgs -->
+  <div class="bg-patterns" aria-hidden="true">
+    <img src="./assets/images/pattern-lines.svg" alt="" class="pattern-lines">
+    <img src="./assets/images/pattern-squiggly-line-top.svg" alt="" class="pattern-top-squiggly">
+    <img src="./assets/images/pattern-squiggly-line-bottom-desktop.svg" alt="" class="pattern-bottom-squiggly">
+    <img src="./assets/images/pattern-circle.svg" alt="" class="pattern-circle-top">
+    <img src="./assets/images/pattern-circle.svg" alt="" class="pattern-circle-mid">
+  </div>
+
+  <div class="app-container">
+
+    <header class="app-header">
+      <img src="./assets/images/logo-full.svg" alt="Coding Conf Logo" class="app-logo">
+    </header>
+
+    <main>
+      <section id="form-section" class="view-section" aria-labelledby="form-heading">
+        <h1 id="form-heading" class="main-title">
+          Your Journey to Coding Conf<br>2025 Starts Here!
+        </h1>
+        <p class="main-subtitle">
+          Secure your spot at next year's biggest coding conference.
+        </p>
+
+        <form id="ticket-form" class="ticket-form" novalidate>
+          
+          <div class="form-group" id="avatar-group">
+            <label class="form-label" id="avatar-label">Upload Avatar</label>
+            <div 
+              class="dropzone-container" 
+              id="dropzone" 
+              tabindex="0" 
+              role="button" 
+              aria-labelledby="avatar-label"
+              aria-describedby="avatar-hint"
+            >
+              <div class="dropzone-content-empty" id="dropzone-empty">
+                <div class="dropzone-icon-box">
+                  <img src="./assets/images/icon-upload.svg" alt="" aria-hidden="true">
+                </div>
+                <span class="dropzone-text">Drag and drop or click to upload</span>
+              </div>
+
+              <div class="dropzone-content-uploaded hidden" id="dropzone-uploaded">
+                <img src="" alt="Avatar preview" class="avatar-preview-img" id="avatar-preview">
+                <div class="dropzone-actions">
+                  <button type="button" class="btn-upload-action btn-remove-img" id="btn-remove-avatar">Remove image</button>
+                  <button type="button" class="btn-upload-action" id="btn-change-avatar">Change image</button>
+                </div>
+              </div>
+
+              <input 
+                type="file" 
+                id="avatar-input" 
+                class="hidden-file-input" 
+                accept="image/png, image/jpeg, image/jpg"
+                tabindex="-1"
+              >
+            </div>
+
+            <div class="field-hint" id="avatar-hint" role="status" aria-live="polite">
+              <svg class="hint-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" aria-hidden="true">
+                <path stroke="#D1D0D5" stroke-linecap="round" stroke-linejoin="round" d="M2 8a6 6 0 1 0 12 0A6 6 0 0 0 2 8Z"/>
+                <path fill="#D1D0D5" d="M8.004 10.462V7.596ZM8 5.57v-.042Z"/>
+                <path stroke="#D1D0D5" stroke-linecap="round" stroke-linejoin="round" d="M8.004 10.462V7.596M8 5.569v-.042"/>
+              </svg>
+              <span class="hint-text" id="avatar-hint-text">Upload your photo (JPG or PNG, max size: 500KB).</span>
+            </div>
+          </div>
+
+          <div class="form-group" id="name-group">
+            <label for="full-name" class="form-label">Full Name</label>
+            <input 
+              type="text" 
+              id="full-name" 
+              name="full-name" 
+              class="form-input" 
+              placeholder="" 
+              aria-describedby="name-hint"
+              autocomplete="name"
+            >
+            <div class="field-hint field-error-only" id="name-hint" role="status" aria-live="polite">
+              <svg class="hint-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" aria-hidden="true">
+                <path stroke="#D1D0D5" stroke-linecap="round" stroke-linejoin="round" d="M2 8a6 6 0 1 0 12 0A6 6 0 0 0 2 8Z"/>
+                <path fill="#D1D0D5" d="M8.004 10.462V7.596ZM8 5.57v-.042Z"/>
+                <path stroke="#D1D0D5" stroke-linecap="round" stroke-linejoin="round" d="M8.004 10.462V7.596M8 5.569v-.042"/>
+              </svg>
+              <span class="hint-text">Please enter your full name.</span>
+            </div>
+          </div>
+
+          <div class="form-group" id="email-group">
+            <label for="email" class="form-label">Email Address</label>
+            <input 
+              type="email" 
+              id="email" 
+              name="email" 
+              class="form-input" 
+              placeholder="example@email.com" 
+              aria-describedby="email-hint"
+              autocomplete="email"
+            >
+            <div class="field-hint field-error-only" id="email-hint" role="status" aria-live="polite">
+              <svg class="hint-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" aria-hidden="true">
+                <path stroke="#D1D0D5" stroke-linecap="round" stroke-linejoin="round" d="M2 8a6 6 0 1 0 12 0A6 6 0 0 0 2 8Z"/>
+                <path fill="#D1D0D5" d="M8.004 10.462V7.596ZM8 5.57v-.042Z"/>
+                <path stroke="#D1D0D5" stroke-linecap="round" stroke-linejoin="round" d="M8.004 10.462V7.596M8 5.569v-.042"/>
+              </svg>
+              <span class="hint-text">Please enter a valid email address.</span>
+            </div>
+          </div>
+
+          <div class="form-group" id="github-group">
+            <label for="github-username" class="form-label">GitHub Username</label>
+            <input 
+              type="text" 
+              id="github-username" 
+              name="github-username" 
+              class="form-input" 
+              placeholder="@yourusername" 
+              aria-describedby="github-hint"
+              autocomplete="username"
+            >
+            <div class="field-hint field-error-only" id="github-hint" role="status" aria-live="polite">
+              <svg class="hint-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" aria-hidden="true">
+                <path stroke="#D1D0D5" stroke-linecap="round" stroke-linejoin="round" d="M2 8a6 6 0 1 0 12 0A6 6 0 0 0 2 8Z"/>
+                <path fill="#D1D0D5" d="M8.004 10.462V7.596ZM8 5.57v-.042Z"/>
+                <path stroke="#D1D0D5" stroke-linecap="round" stroke-linejoin="round" d="M8.004 10.462V7.596M8 5.569v-.042"/>
+              </svg>
+              <span class="hint-text">Please enter your GitHub username.</span>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-submit" id="btn-generate">Generate My Ticket</button>
+
+        </form>
+      </section>
+      <!-- tela do ticket gerado -->
+      <section id="ticket-section" class="view-section hidden" aria-labelledby="ticket-heading">
+        <h1 id="ticket-heading" class="main-title">
+          Congrats, <span class="gradient-text" id="ticket-heading-name">Jonatan Kristof</span>!<br>Your ticket is ready.
+        </h1>
+        <p class="main-subtitle">
+          We've emailed your ticket to <span class="highlight-email" id="ticket-user-email">jonatan@email.com</span> and will send updates in the run up to the event.
+        </p>
+        
+        <div class="ticket-wrapper">
+          <img src="./assets/images/pattern-ticket.svg" alt="" class="ticket-svg-bg" aria-hidden="true">
+
+          <div class="ticket-card">
+            <div class="ticket-main">
+              <div class="ticket-header">
+                <img src="./assets/images/logo-mark.svg" alt="" class="ticket-logo-mark" aria-hidden="true">
+                <div class="ticket-conf-details">
+                  <span class="ticket-conf-name">Coding Conf</span>
+                  <span class="ticket-conf-date">Jan 31, 2025 / Austin, TX</span>
+                </div>
+              </div>
+
+              <div class="ticket-attendee">
+                <img src="./assets/images/image-avatar.jpg" alt="Attendee avatar" class="ticket-avatar" id="ticket-attendee-avatar">
+                <div class="ticket-user-info">
+                  <span class="ticket-attendee-name" id="ticket-attendee-name">Jonatan Kristof</span>
+                  <div class="ticket-github">
+                    <img src="./assets/images/icon-github.svg" alt="" class="ticket-github-icon" aria-hidden="true">
+                    <span id="ticket-attendee-github">@jonatankristof0101</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="ticket-stub">
+              <span class="ticket-number" id="ticket-number">#01609</span>
+            </div>
+          </div>
+        </div>
+
+        <button type="button" class="btn-secondary" id="btn-reset">Generate Another Ticket</button>
+      </section>
+    </main>
+
+  </div>
+
+  <script src="./assets/js/main.js"></script>
+</body>
+</html>
